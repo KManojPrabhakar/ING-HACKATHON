@@ -26,7 +26,7 @@ var MyInput = class extends HTMLElement {
       if (this.el.querySelector('[name=validation-type]:checked').value === 'number') {
         this.inputEl.setCustomValidity('Only numbers');
       }  else if(this.el.querySelector('[name=validation-type]:checked').value === 'password') {
-        this.inputEl.setCustomValidity('Must have at least 1 letter, 1 number and 1 of the above symbols');
+        this.inputEl.setCustomValidity('Must have at least 1 letter, 1 number and 1 of these !@#&* symbols');
 
       } else {
         this.inputEl.setCustomValidity('Only letters');

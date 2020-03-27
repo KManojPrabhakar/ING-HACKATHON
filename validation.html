@@ -11,7 +11,7 @@
         #input:invalid {
           border: solid #F00 2px;
         }
-        #secondInput #passwordLabel{
+        #secondInput #letterLabel {
           display: none;
         }
       </style>
@@ -21,10 +21,10 @@
         <label>
           <input type="radio" name="validation-type" value="number" checked/> Numbers
         </label>
-        <label>
+        <label id="letterLabel">
           <input type="radio" name="validation-type" value="letter"/> Letters
         </label>
-        <label id="passwordLabel">
+        <label >
           <input type="radio"  name="validation-type" value="password"/> Password
         </label>
       </div>
@@ -34,9 +34,11 @@
       <span slot="label">Validation:</span>
       
     </my-input>
-    
-    <my-input id="secondInput">
-      <span slot="label">Validation 2:</span>
-    </my-input>
+    <div id="secondInput">
+      <my-input >
+        <span slot="label">Validation 2:</span>
+      </my-input>
+    </div>
+   
   </body>
 </html>

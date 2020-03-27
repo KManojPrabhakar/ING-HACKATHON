@@ -52,7 +52,7 @@ describe('my-input', function() {
       assert.equal(comp.validate(), true);
     });
 
-    it('should return true when validating password with "manoj123"', function() {
+    it('should return false when validating password with "manoj123"', function() {
       document.querySelector('[name=validation-type][value=password]').checked = 'true';
       document.querySelector('#input').value = 'manoj123';
       assert.equal(comp.validate(), false);
