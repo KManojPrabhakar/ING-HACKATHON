@@ -70,27 +70,27 @@
         }
       } else {
         // Optimised code here
-        let top = m.classList.contains('down') ? m.style.top + distance : m.style.top - distance;
-        let left = m.classList.contains('right') ? m.style.left + distance : m.style.left - distance;
-        if (top < 0) top = 0;
+        let topPositionValue = parseInt(m.style.top.split('px')[0]);
+        let leftPositionValue = parseInt(m.style.left.split('px')[0]);
 
+        let top = m.classList.contains('down') ? topPositionValue + distance : topPositionValue - distance;
+        let left = m.classList.contains('right') ? leftPositionValue + distance : leftPositionValue - distance;
         if (top < 0) top = 0;
         if (top > maxHeight) top = maxHeight;
         m.style.top = top + 'px';
         if (left < 0) left = 0;
         if (left > maxWidth) left = maxWidth;
         m.style.left = left + 'px';
-
-        if (m.style.top === 0) {
+        if (topPositionValue === 0) {
           handleOffestTopZero(m);
         }
-        if (m.style.top === maxHeight) {
-          handleOffestTopMaxHeight(m);
+        if (topPositionValue === maxHeight) {
+            handleOffestTopMaxHeight(m);
         }
-        if (m.style.left === 0) {
+        if (leftPositionValue === 0) {
           handleOffestLeftZero(m);
         }
-        if (m.style.left === maxWidth) {
+        if (leftPositionValue === maxWidth) {
           handleOffestLeftMaxWidth(m);
         }
       }
